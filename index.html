@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework-26</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blocks">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </div>
+  <button class="button">Change colors</button>
+</body>
+<script>
+  let btn = document.querySelector(".button");
+
+  function getRandomColor() {
+    return Math.ceil(Math.random() * 255);
+  }
+  btn.addEventListener("click",function (){
+    let color = getRandomColor();
+
+    let blocks = document.querySelectorAll('.block');
+    for (let block of blocks){
+      block.style.background = `rgb(${getRandomColor()},${getRandomColor()},${getRandomColor()},${getRandomColor()})`;
+    }
+  })
+</script>
+</html>
